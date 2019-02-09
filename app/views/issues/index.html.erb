@@ -8,13 +8,14 @@
             <thead>
               <% if @issues.any? %>
                 <tr>
-                    <th>id</th>
-                    <th>action</th>
-                    <th>repository id</th>
-                    <th>repository name</th>
-                    <th>owner name</th>
-                    <th>created at</th>
-                    <th>updated at</th>
+                  <th></th>
+                  <th>id</th>
+                  <th>action</th>
+                  <th>repository id</th>
+                  <th>repository name</th>
+                  <th>owner name</th>
+                  <th>created at</th>
+                  <th>updated at</th>
                 </tr>
               <% else %>
                 <div class="col s12 m12">
@@ -30,8 +31,10 @@
             <tbody>
               <% @issues.each do |issue| %>
                 <tr>
+                  <td><%= link_to "Visualizar", issue_path(issue), class:"btn-small waves-effect waves-light light-blue" %></td>
                   <td><%= issue.id%></td>
                   <td><%= issue.action %></td>
+                  <td><%= issue.repository_id%></td>
                   <td><%= issue.repository_name%></td>
                   <td><%= issue.owner_name%></td>
                   <td><%= issue.created_at%></td>
@@ -42,7 +45,8 @@
           </table>
         </div>
       </div>
+    </div>
+    
   </div>
-  <br><br>
 </div>
  
